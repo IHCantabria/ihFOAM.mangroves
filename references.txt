@@ -1,0 +1,15 @@
+INFO:
+  http://ihfoam.ihcantabria.com/
+  infoam@ihcantabria.com
+
+REFERENCES:
+* Solitary wave attenuation by vegetation patches.
+  Maza, M, Lara, J.L., & Losada, I.J. [2016]
+  Advances in Water Resources [Vol.98, pp. 159-172]
+  hhttps://doi.org/10.1016/j.advwatres.2016.10.021
+
+
+* Tsunami wave interaction with mangrove forests: A 3-D numerical approach.
+  Maza, M, Lara, J.L., & Losada, I.J. [2015]
+  Coastal Engineering [Vol.98, pp. 33-54]
+  http://dx.doi.org/10.1016/j.oceaneng.2015.07.051

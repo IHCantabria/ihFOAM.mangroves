@@ -1,0 +1,57 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.1.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      setFieldsDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+defaultFieldValues
+(
+    volScalarFieldValue alpha.water 0
+    volScalarFieldValue MangrovesIndex 0
+    volVectorFieldValue U (0 0 0)
+);
+
+regions
+(
+    boxToCell
+    {
+        box (-10 -10 -10) (100 100 0.15);
+        fieldValues
+        (
+            volScalarFieldValue alpha.water 1
+        );
+    }
+
+    surfaceToCell
+    {
+        file            "./constant/triSurface/seaweed.stl";
+        outsidePoints   ((2 0.25 0.15));    // definition of outside
+        includeCut      true;              // cells cut by surface
+        includeInside   true;              // cells not on outside of surf
+        includeOutside  false;              // cells on outside of surf
+        nearDistance    -1;                 // cells with centre near surf
+                                            // (set to -1 if not used)
+        curvature       -100;                // cells within nearDistance
+                                            // and near surf curvature
+                                            // (set to -100 if not used)
+
+        fieldValues
+        (
+            volScalarFieldValue MangrovesIndex 1
+        );
+    }
+);
+
+
+// ************************************************************************* //
